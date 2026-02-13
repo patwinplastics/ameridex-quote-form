@@ -164,7 +164,7 @@ document.addEventListener("DOMContentLoaded", () => {
           <div class="success-message">
             <div class="checkmark">&#10003;</div>
             <h2>Quote Request Submitted!</h2>
-            <p>Thank you for your interest in DrySpace. We will review your project details and get back to you within 1-2 business days via your preferred contact method.</p>
+            <p>Thank you for your interest in AmeriDex. We will review your project details and get back to you within 1-2 business days via your preferred contact method.</p>
           </div>
         `;
       } else {
