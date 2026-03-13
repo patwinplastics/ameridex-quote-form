@@ -116,6 +116,11 @@ body {
   flex: 1;
 }
 
+/* ===== FULL-WIDTH NOTES ===== */
+.full-width-notes {
+  margin-top: 20px;
+}
+
 /* ===== FORM GROUPS ===== */
 .form-group {
   margin-bottom: 18px;
