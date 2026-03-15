@@ -206,18 +206,18 @@ document.addEventListener("DOMContentLoaded", () => {
 
   uploadZone.addEventListener("dragover", (e) => {
     e.preventDefault();
-    uploadZone.style.borderColor = "#8b1a1a";
+    uploadZone.style.borderColor = "#c9242b";
     uploadZone.style.background = "#fef2f2";
   });
 
   uploadZone.addEventListener("dragleave", () => {
-    uploadZone.style.borderColor = "#d1d5db";
+    uploadZone.style.borderColor = "#d3d6de";
     uploadZone.style.background = "#fff";
   });
 
   uploadZone.addEventListener("drop", (e) => {
     e.preventDefault();
-    uploadZone.style.borderColor = "#d1d5db";
+    uploadZone.style.borderColor = "#d3d6de";
     uploadZone.style.background = "#fff";
     handleFiles(e.dataTransfer.files);
   });
