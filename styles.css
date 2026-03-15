@@ -292,6 +292,12 @@ body {
   text-decoration: underline;
 }
 
+.upload-hint {
+  margin-top: 6px;
+  font-size: 0.78rem;
+  color: var(--text-muted);
+}
+
 .file-list {
   margin-top: 8px;
   font-size: 0.82rem;
