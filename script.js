@@ -226,10 +226,31 @@ document.addEventListener("DOMContentLoaded", () => {
     handleFiles(fileInput.files);
   });
 
+  // ===== FILE VALIDATION =====
+  const ALLOWED_TYPES = ['image/jpeg', 'image/png', 'image/gif', 'image/webp', 'image/bmp', 'image/svg+xml', 'application/pdf'];
+  const ALLOWED_EXTENSIONS = /\.(jpe?g|png|gif|webp|bmp|svg|pdf)$/i;
+  const MAX_FILE_SIZE = 10 * 1024 * 1024; // 10 MB
+
   function handleFiles(files) {
+    const rejected = [];
+
     Array.from(files).forEach(file => {
-      uploadedFiles.push(file);
+      const typeOk = ALLOWED_TYPES.includes(file.type) || ALLOWED_EXTENSIONS.test(file.name);
+      const sizeOk = file.size <= MAX_FILE_SIZE;
+
+      if (!typeOk) {
+        rejected.push(`"${file.name}" — not an accepted file type.`);
+      } else if (!sizeOk) {
+        rejected.push(`"${file.name}" — exceeds 10 MB limit.`);
+      } else {
+        uploadedFiles.push(file);
+      }
     });
+
+    if (rejected.length) {
+      alert('The following files were not added:\n\n' + rejected.join('\n'));
+    }
+
     renderFileList();
   }
 
